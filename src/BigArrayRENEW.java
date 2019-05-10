@@ -1,22 +1,42 @@
 import java.util.Arrays;
 
 public class BigArrayRENEW {
-    public static void main(String[] args) {
-        int[][][][][][] array = new int[2][2][2][2][2][2];
-        int var = 1;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                for (int q = 0; q < array.length; q++) {
-                    for (int k = 0; k < array.length; k++) {
-                        for (int h = 0; h < array.length; h++) {
-                            for (int g = 0; g < array.length; g++) {
-                                array[i][j][q][k][h][g] = var++;
+
+    static class BigCycle1{
+        int[][][][][][] run1(int[][][][][][] array) {
+            int[][][][][][] mas = array;
+            int var = 1;
+            for (int i = 0; i < mas.length; i++) {
+                for (int j = 0; j < mas.length; j++) {
+                    for (int q = 0; q < mas.length; q++) {
+                        for (int k = 0; k < mas.length; k++) {
+                            for (int h = 0; h < mas.length; h++) {
+                                for (int g = 0; g < mas.length; g++) {
+                                    mas[i][j][q][k][h][g] = var++;
+                                }
                             }
                         }
                     }
                 }
             }
+            return mas;
         }
-        System.out.println(Arrays.deepToString(array));
+    }
+
+    static class Output{
+        void display(int[][][][][][] array){
+            System.out.println(Arrays.deepToString(array));
+        }
+    }
+
+
+    public static void main(String[] args) {
+        int[][][][][][] array = new int[2][2][2][2][2][2];
+        int var = 1;
+        Output output = new Output();
+        BigCycle1 cycle1 = new BigCycle1();
+        array = cycle1.run1(array);
+        output.display(array);
+
     }
 }
