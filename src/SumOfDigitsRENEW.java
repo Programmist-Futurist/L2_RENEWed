@@ -17,6 +17,6 @@ public class SumOfDigitsRENEW {
         int num = scaner.nextInt();
         DigitsSum digitsSum = new DigitsSum();
         int sum = digitsSum.digitsSumFunc(num);
-        CommonDividerRENEW.Out1.out1Func(sum);
+        CommonDividerRENEW.DisplayCommonDivider.displayCommonDividerFunction(sum);
     }
 }

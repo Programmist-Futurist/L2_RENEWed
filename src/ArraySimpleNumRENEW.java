@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 public class ArraySimpleNumRENEW {
 
-    static class SimpleArr{
-        int[] masFill(int CONST, int num) {
-            int[] mas = new int[CONST];
+    static class FillArrayWithSimpleNumbers{
+        int[] fillArrayWithSimpleNumbersFunction(int CONST, int num) {
+            int[] array = new int[CONST];
 
             for (int i=0; i<CONST; i++) {
                 int det = -2;
@@ -16,25 +16,25 @@ public class ArraySimpleNumRENEW {
                             det += 1; }
                     }
                 }
-                mas[i] = num;
+                array[i] = num;
             }
-            return mas;
+            return array;
         }
     }
 
-    static class ArrOut{
-        static void arrayOut(int[] array) {
+    static class DisplayArrayOut{
+        static void displayArrayOutFunction(int[] array) {
             System.out.println(Arrays.toString(array));
         }
     }
     public static void main(String[] args) {
         final int CONST = 100;
-        int[] array = new int[CONST];
+        int[] ArrayWithSimpleNumbers = new int[CONST];
         int num=1;
-        SimpleArr simpleArr = new SimpleArr();
-        ArrOut arrOut = new ArrOut();
-        array = simpleArr.masFill(CONST, num);
-        arrOut.arrayOut(array);
+        FillArrayWithSimpleNumbers fillArrayWithSimpleNumbers = new FillArrayWithSimpleNumbers();
+        DisplayArrayOut displayArrayOut = new DisplayArrayOut();
+        ArrayWithSimpleNumbers = fillArrayWithSimpleNumbers.fillArrayWithSimpleNumbersFunction(CONST, num);
+        displayArrayOut.displayArrayOutFunction(ArrayWithSimpleNumbers);
 
     }
 }

@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public abstract class CommonDividerRENEW {
 
-    static class IfElse1 {
-        int commonDivider(int a, int b) {
+    static class FindCommonDivider {
+        int findCommonDividerFunction(int a, int b) {
             int c = 0;
             if (a > b) {
                 while (b != 0) {
@@ -23,8 +23,8 @@ public abstract class CommonDividerRENEW {
         }
     }
 
-     static class Out1{
-        static void out1Func(int c) {
+     static class DisplayCommonDivider{
+        static void displayCommonDividerFunction(int c) {
             System.out.println(c);
         }
     }
@@ -32,12 +32,12 @@ public abstract class CommonDividerRENEW {
 
     public static void main(String[] args) {
         Scanner scaner = new Scanner(System.in);
-        int a = scaner.nextInt();
-        int b = scaner.nextInt();
-        IfElse1 ifElse1 = new IfElse1();
-        Out1 out1 = new Out1();
-        int c = ifElse1.commonDivider(a, b);
-        out1.out1Func(c);
+        int firstNum = scaner.nextInt();
+        int secondNum = scaner.nextInt();
+        FindCommonDivider findCommonDivider = new FindCommonDivider();
+        DisplayCommonDivider displayCommonDivider = new DisplayCommonDivider();
+        int commonDivider = findCommonDivider.findCommonDividerFunction(firstNum, secondNum);
+        displayCommonDivider.displayCommonDividerFunction(commonDivider);
 
 
     }

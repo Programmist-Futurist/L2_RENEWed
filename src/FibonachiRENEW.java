@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class FibonachiRENEW {
 
-    static class FibbonachClass{
+    static class FillArrayWithFibbonachiNumbers{
         int[] fibbonachiFunc(int[] array){
             for(int i=2; i<20; i++){
                 array[i]=array[i-1]+array[i-2];
@@ -11,11 +11,11 @@ public class FibonachiRENEW {
         }
     }
     public static void main(String[] args){
-        int[] array = new int[20];
-        array[0] = 1;
-        array[1] = 1;
-        FibbonachClass fibbonachClass = new FibbonachClass();
-        array = fibbonachClass.fibbonachiFunc(array);
-        ArraySimpleNumRENEW.ArrOut.arrayOut(array);
+        int[] fibonachiArray = new int[20];
+        fibonachiArray[0] = 1;
+        fibonachiArray[1] = 1;
+        FillArrayWithFibbonachiNumbers fillArrayWithFibbonachiNumbers = new FillArrayWithFibbonachiNumbers();
+        fibonachiArray =fillArrayWithFibbonachiNumbers.fibbonachiFunc(fibonachiArray);
+        ArraySimpleNumRENEW.DisplayArrayOut.displayArrayOutFunction(fibonachiArray);
     }
 }

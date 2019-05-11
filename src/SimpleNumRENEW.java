@@ -2,20 +2,20 @@ import java.util.Scanner;
 
 public class SimpleNumRENEW {
 
-    static class Cycle {
+    static class SimpleNumOrNot {
 
-        int function(int num, int d) {
+        int simpleNumOrNotFunction(int num, int determinant) {
             for (int i = 2; i < num; i++) {
                 if (num % i == 0) {
-                    d += 1;
+                    determinant += 1;
                 }
             }
-            return d;
+            return determinant;
         }
     }
 
-    static class Out{
-        void display (int d) {
+    static class DisplaySimpleOrNotSimple{
+        void displaySimpleOrNotSimpleFunction (int d) {
             if (d == 0) {
                 System.out.println("Simple!");
             } else {
@@ -27,11 +27,11 @@ public class SimpleNumRENEW {
     public static void main(String[] args) {
         Scanner scaner = new Scanner(System.in);
         int num = scaner.nextInt();
-            int det = 0;
-            Cycle cycle = new Cycle();
-            det = cycle.function(num, det);
-            Out out = new Out();
-            out.display(det);
+            int determinant = 0;
+        SimpleNumOrNot simpleNumOrNot = new SimpleNumOrNot();
+        determinant = simpleNumOrNot.simpleNumOrNotFunction(num, determinant);
+        DisplaySimpleOrNotSimple displaySimpleOrNotSimple = new DisplaySimpleOrNotSimple();
+        displaySimpleOrNotSimple.displaySimpleOrNotSimpleFunction(determinant);
         }
 }
 

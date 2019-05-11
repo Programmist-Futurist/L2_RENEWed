@@ -2,8 +2,8 @@ import java.util.Arrays;
 
 public class BigArrayRENEW {
 
-    static class BigCycle1{
-        int[][][][][][] run1(int[][][][][][] array) {
+    static class FillDeepArrayWithNumbers{
+        int[][][][][][] fillDeepArrayWithNumbersFunction(int[][][][][][] array) {
             int[][][][][][] mas = array;
             int var = 1;
             for (int i = 0; i < mas.length; i++) {
@@ -23,8 +23,8 @@ public class BigArrayRENEW {
         }
     }
 
-    static class Output{
-        void display(int[][][][][][] array){
+    static class DisplayDeepArray{
+        void displayDeepArrayFunction(int[][][][][][] array){
             System.out.println(Arrays.deepToString(array));
         }
     }
@@ -33,10 +33,10 @@ public class BigArrayRENEW {
     public static void main(String[] args) {
         int[][][][][][] array = new int[2][2][2][2][2][2];
         int var = 1;
-        Output output = new Output();
-        BigCycle1 cycle1 = new BigCycle1();
-        array = cycle1.run1(array);
-        output.display(array);
+        DisplayDeepArray displayDeepArray = new DisplayDeepArray();
+        FillDeepArrayWithNumbers fillDeepArrayWithNumbers = new FillDeepArrayWithNumbers();
+        array = fillDeepArrayWithNumbers.fillDeepArrayWithNumbersFunction(array);
+        displayDeepArray.displayDeepArrayFunction(array);
 
     }
 }

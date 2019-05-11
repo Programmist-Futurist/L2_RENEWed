@@ -1,9 +1,9 @@
 public class TriangleArrayRENEW {
 
-    static class TriangleClass{
-        void triangleFunc(int[][] array){
-            OutArray1 outArray1 = new OutArray1();
-            OutArray2 outArray2 = new OutArray2();
+    static class FillTriangleArrayWithSpecialNumbers{
+        void fillTriangleArrayWithSpecialNumbersFunction(int[][] array){
+            DisplayRowOfTriangleArray displayRowOfTriangleArray = new DisplayRowOfTriangleArray();
+            JumpToNextRow jumpToNextRow = new JumpToNextRow();
 
             for (int i = 1; i < array.length; i++) {
                 for (int j = 0; j < array.length; j++) {
@@ -24,33 +24,33 @@ public class TriangleArrayRENEW {
 
                     if(array[i][j] != 0) {
                         int m = 10;
-                        outArray1.outArrayFunc(array, i, j);
+                        displayRowOfTriangleArray.displayRowOfTriangleArrayFunction(array, i, j);
                     }
                 }
-                outArray2.outArrayFunc();
+                jumpToNextRow.jumpToNextRowFunction();
             }
         }
     }
 
-    static class OutArray1{
-        void  outArrayFunc(int[][] array, int i, int j){
+    static class DisplayRowOfTriangleArray{
+        void  displayRowOfTriangleArrayFunction(int[][] array, int i, int j){
             System.out.print(array[i][j] + " ");
         }
     }
 
 
-    static class OutArray2{
-        void  outArrayFunc(){
+    static class JumpToNextRow{
+        void  jumpToNextRowFunction(){
             System.out.println();
         }
     }
     public static void main(String[] args) {
         final int K = 10;
-        int[][] array = new int[K][K];
-        array[0][0] = 1;
-        CommonDividerRENEW.Out1.out1Func(array[0][0]);
-        TriangleClass triangleClass = new TriangleClass();
-        triangleClass.triangleFunc(array);
+        int[][] TriangleArray = new int[K][K];
+        TriangleArray[0][0] = 1;
+        CommonDividerRENEW.DisplayCommonDivider.displayCommonDividerFunction(TriangleArray[0][0]);
+        FillTriangleArrayWithSpecialNumbers fillTriangleArrayWithSpecialNumbers = new FillTriangleArrayWithSpecialNumbers();
+        fillTriangleArrayWithSpecialNumbers.fillTriangleArrayWithSpecialNumbersFunction(TriangleArray);
     }
 }
 // Получилось только такой вывод сделать,
