@@ -25,8 +25,8 @@ public class DoubleArrayRENEW {
     }
 
     public static void main(String[] args) {
-        final int H = 5;
-        char[][] DoubleArray = new char[H][H];
+        final int ARRAY_SIZE = 5;
+        char[][] DoubleArray = new char[ARRAY_SIZE][ARRAY_SIZE];
         FillDoubleArrayWithChars fillDoubleArrayWithChars = new FillDoubleArrayWithChars();
         DisplayDoubleArray displayDoubleArray = new DisplayDoubleArray();
         DoubleArray = fillDoubleArrayWithChars.fillDoubleArrayWithCharsFunction(DoubleArray);

@@ -19,11 +19,11 @@ public class EqualityOfHalfsRENEW {
     }
 
     public static void main(String[] args){
-        final int First =1000000;
-        final int Last=1999999;
+        final int FIRST =1000000;
+        final int LAST=1999999;
         int total = 0;
         CountHappyTickets countHappyTickets = new CountHappyTickets();
-        total = countHappyTickets.countHappyTicketsFunction(First, Last, total);
+        total = countHappyTickets.countHappyTicketsFunction(FIRST, LAST, total);
         CommonDividerRENEW.DisplayCommonDivider.displayCommonDividerFunction(total);
 
     }

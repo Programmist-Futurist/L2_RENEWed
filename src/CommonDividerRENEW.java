@@ -3,23 +3,23 @@ import java.util.Scanner;
 public abstract class CommonDividerRENEW {
 
     static class FindCommonDivider {
-        int findCommonDividerFunction(int a, int b) {
-            int c = 0;
-            if (a > b) {
-                while (b != 0) {
-                    c = b;
-                    b = a % b;
-                    a = c;
+        int findCommonDividerFunction(int firstNum, int secondNum) {
+            int temp = 0;
+            if (firstNum > secondNum) {
+                while (secondNum != 0) {
+                    temp = secondNum;
+                    secondNum = firstNum % secondNum;
+                    firstNum = temp;
                 }
             } else {
-                c = 0;
-                while (a != 0) {
-                    c = a;
-                    a = b % a;
-                    b = c;
+                temp = 0;
+                while (firstNum != 0) {
+                    temp = firstNum;
+                    firstNum = secondNum % firstNum;
+                    secondNum = temp;
                 }
             }
-            return c;
+            return temp;
         }
     }
 

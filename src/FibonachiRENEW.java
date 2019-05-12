@@ -3,11 +3,11 @@ import java.util.Arrays;
 public class FibonachiRENEW {
 
     static class FillArrayWithFibbonachiNumbers{
-        int[] fibbonachiFunc(int[] array){
+        int[] fibbonachiFunc(int[] SomeArray){
             for(int i=2; i<20; i++){
-                array[i]=array[i-1]+array[i-2];
+                SomeArray[i]=SomeArray[i-1]+SomeArray[i-2];
             }
-            return array;
+            return SomeArray;
         }
     }
     public static void main(String[] args){

@@ -4,9 +4,9 @@ public class SimpleNumRENEW {
 
     static class SimpleNumOrNot {
 
-        int simpleNumOrNotFunction(int num, int determinant) {
-            for (int i = 2; i < num; i++) {
-                if (num % i == 0) {
+        int simpleNumOrNotFunction(int someNumber, int determinant) {
+            for (int i = 2; i < someNumber; i++) {
+                if (someNumber % i == 0) {
                     determinant += 1;
                 }
             }
@@ -26,10 +26,10 @@ public class SimpleNumRENEW {
 
     public static void main(String[] args) {
         Scanner scaner = new Scanner(System.in);
-        int num = scaner.nextInt();
+        int someNumber = scaner.nextInt();
             int determinant = 0;
         SimpleNumOrNot simpleNumOrNot = new SimpleNumOrNot();
-        determinant = simpleNumOrNot.simpleNumOrNotFunction(num, determinant);
+        determinant = simpleNumOrNot.simpleNumOrNotFunction(someNumber, determinant);
         DisplaySimpleOrNotSimple displaySimpleOrNotSimple = new DisplaySimpleOrNotSimple();
         displaySimpleOrNotSimple.displaySimpleOrNotSimpleFunction(determinant);
         }
