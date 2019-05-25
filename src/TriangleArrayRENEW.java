@@ -1,8 +1,18 @@
+/**
+ * In this class creating (int[][] array)
+ * and fills in the form of triangle with Pascal's numbers
+ */
 public class TriangleArrayRENEW {
 
 
-
-         static class FillTriangleArrayWithNumbers {
+    /**
+     * Class contains method that fills (int[][] array) in the form of triangle with Pascal's numbers
+     */
+    static class FillTriangleArrayWithNumbers {
+        /**
+         * Method fills (int[][] array) in the form of triangle with Pascal's numbers
+         * @return TriangleArray full of Pascal's numbers
+         */
             int[][] fillTriangleArrayWithNumbersFunction() {
                 int[][] TriangleArray = new int[10][10];
                 for (int i = 0; i < 10; i++) {
@@ -16,7 +26,9 @@ public class TriangleArrayRENEW {
             }
         }
 
-
+    /**
+     * Class contains method that displays elements of array in the form of triangle
+     */
     static class OutTriangleArray {
         public void show () {
             int[][] TempTriangleArray = new int[10][10];
@@ -33,6 +45,10 @@ public class TriangleArrayRENEW {
     }
 
 
+    /**
+     * Starts the work of all methods of the class TriangleArrayRENEW
+     * @param args
+     */
     public static void main(String[] args){
         FillTriangleArrayWithNumbers fillTriangleArrayWithNumbers = new FillTriangleArrayWithNumbers();
         OutTriangleArray outTriangleArray = new OutTriangleArray();
