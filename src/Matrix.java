@@ -1,6 +1,9 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * In this class creating matrix and working with it
+ */
 public class Matrix {
 
     final int RANGE_OF_ELEMENTS = 10;
@@ -9,6 +12,10 @@ public class Matrix {
     final int columns = 5;
     final int rows = 5;
 
+    /**
+     *  /**
+     *      * Assigning Values in the matrix (array)
+     */
     public Matrix(){
         matrix_array = new double[columns][rows];
         for(int i=0; i<columns; i++){
@@ -18,6 +25,11 @@ public class Matrix {
         }
     }
 
+    /**
+     * Multiplying each element by number
+     * Using cycles to do it
+     * @param num
+     */
     public void multiplyByNumber(int num){
         for(int i=0; i<columns; i++ ) {
             for(int j=0; j<rows; j++){
@@ -26,6 +38,11 @@ public class Matrix {
         }
     }
 
+    /**
+     * Adding each element of primary matrix to another matrix (double[][] array)
+     * We can not add arrays with different length, method checks it
+     * @param matrix2
+     */
     public void addToAnotherMatrix(double[][] matrix2){
         if (matrix2.length == matrix_array.length && matrix2[1].length == matrix_array[1].length){
             for(int i=0; i<columns; i++ ) {
@@ -36,6 +53,13 @@ public class Matrix {
         }
     }
 
+    /**
+     * Multiplying of the primary matrix (double[][] array) on another one,
+     * Method checks does amount of
+     * Columns of primary matrix array and rows of another matrix array
+     * are equal
+     * @param matrix2
+     */
     public void multiplyByAnotherMatrix(double[][] matrix2){
         double[][] tempMatrix = new double[matrix_array.length][matrix_array.length];
         if (matrix2[1].length == matrix_array.length) {
@@ -50,7 +74,11 @@ public class Matrix {
         matrix_array = tempMatrix;
     }
 
-
+    /**
+     * Method changes the placing of elements inside array
+     * in order to make Transposition of matrix
+     * by the rule of transposition of matrixs
+     */
     public void matrixTransposition(){
         double[][] tempMatrix = new double[matrix_array[1].length][matrix_array.length];
             for (int i = 0; i < matrix_array.length; i++) {
@@ -61,11 +89,18 @@ public class Matrix {
         matrix_array = tempMatrix;
     }
 
+    /**
+     * Method displays matrix (double[][] array) in String type
+     */
     public static void displayMatrix(){
         Matrix matrix = new Matrix();
         System.out.println(Arrays.deepToString(matrix.matrix_array));
     }
 
+    /**
+     * This method runs all methods from the class Matrix
+     * @param args
+     */
     public static void main(String[] args){
         Matrix matrix = new Matrix();
         matrix.multiplyByNumber(5);
