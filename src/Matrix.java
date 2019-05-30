@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -9,14 +10,15 @@ public class Matrix {
     final int RANGE_OF_ELEMENTS = 10;
 
     double[][] matrix_array;
-    final int columns = 5;
-    final int rows = 5;
+    int columns;
+    int rows;
 
     /**
-     *  /**
-     *      * Assigning Values in the matrix (array)
+     * Assigning Values in the matrix (array)
      */
-    public Matrix(){
+    public Matrix(int columns, int rows){
+        this.columns = columns;
+        this.rows = rows;
         matrix_array = new double[columns][rows];
         for(int i=0; i<columns; i++){
             for(int j=0; j<rows; j++){
@@ -28,7 +30,7 @@ public class Matrix {
     /**
      * Multiplying each element by number
      * Using cycles to do it
-     * @param num
+     * @param num the number on which all elements of our array will be multiplied
      */
     public void multiplyByNumber(int num){
         for(int i=0; i<columns; i++ ) {
@@ -41,7 +43,7 @@ public class Matrix {
     /**
      * Adding each element of primary matrix to another matrix (double[][] array)
      * We can not add arrays with different length, method checks it
-     * @param matrix2
+     * @param matrix2 another array with which our parent matrix will be added
      */
     public void addToAnotherMatrix(double[][] matrix2){
         if (matrix2.length == matrix_array.length && matrix2[1].length == matrix_array[1].length){
@@ -58,7 +60,7 @@ public class Matrix {
      * Method checks does amount of
      * Columns of primary matrix array and rows of another matrix array
      * are equal
-     * @param matrix2
+     * @param matrix2 another array on which our parent matrix will be multiplied
      */
     public void multiplyByAnotherMatrix(double[][] matrix2){
         double[][] tempMatrix = new double[matrix_array.length][matrix_array.length];
@@ -92,9 +94,8 @@ public class Matrix {
     /**
      * Method displays matrix (double[][] array) in String type
      */
-    public static void displayMatrix(){
-        Matrix matrix = new Matrix();
-        System.out.println(Arrays.deepToString(matrix.matrix_array));
+    public void displayMatrix(){
+        System.out.println(Arrays.deepToString(matrix_array));
     }
 
     /**
@@ -102,11 +103,12 @@ public class Matrix {
      * @param args
      */
     public static void main(String[] args){
-        Matrix matrix = new Matrix();
-        matrix.multiplyByNumber(5);
+        Matrix matrix = new Matrix(5,5);
+//        matrix.multiplyByNumber(5);
 
 
 //         Creation of the second matrix to work with!
+        System.out.println("Write firstly the number of columns and then number of rows of another matrix to work with:");
         Scanner scan = new Scanner(System.in);
         int columns2 = scan.nextInt();
         int rows2 = scan.nextInt();
@@ -118,9 +120,9 @@ public class Matrix {
         }
 
 
-        matrix.addToAnotherMatrix(matrix2);
-        matrix.multiplyByAnotherMatrix(matrix.matrix_array);
-        matrix.matrixTransposition();
+//        matrix.addToAnotherMatrix(matrix2);
+//        matrix.multiplyByAnotherMatrix(matrix.matrix_array);
+//        matrix.matrixTransposition();
         matrix.displayMatrix();
     }
 

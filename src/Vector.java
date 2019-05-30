@@ -8,16 +8,15 @@ public class Vector {
 
 
     final int BASIC_ARRAY_SIZE = 10;
-    final int STARTED_QUANTITY = 0;
     public Object[] ArrayOfLinks = new Object[BASIC_ARRAY_SIZE];
-    public int quantity_of_elements = STARTED_QUANTITY;
+    public int quantity_of_elements = 0;
 
     /**
      * Adding new link in the array
      * Checking does quantity of links is equal to length of
      * (array of links)-1, copping all elements of primary array
      * and set them in another array with adding element
-     * @param link
+     * @param link the object that we want to set into the array
      */
     public void addElement(Object link) {
         if (quantity_of_elements == ArrayOfLinks.length - 1) {
@@ -30,21 +29,21 @@ public class Vector {
 
     /**
      * Getting element from array
-     * @param num_of_element
+     * @param numOfElement we need it to know which element to get from array
      * @return
      */
-    public Object getElement(int num_of_element) {
-        return  ArrayOfLinks[num_of_element];
+    public Object getElement(int numOfElement) {
+        return  ArrayOfLinks[numOfElement];
     }
 
     /**
      * Deleting element from array
      * Delete element and move all elements from the right side from this element
      * to the left on 1 place
-     * @param num_of_element
+     * @param numOfElement we need it to know which element to delete in array
      */
-    public void deleteElement(int num_of_element) {
-        for (int i = num_of_element; i < quantity_of_elements; i++) {
+    public void deleteElement(int numOfElement) {
+        for (int i = numOfElement; i < quantity_of_elements; i++) {
             ArrayOfLinks[i] = ArrayOfLinks[i + 1];
             ArrayOfLinks[quantity_of_elements] = null;
             quantity_of_elements--;
@@ -57,7 +56,7 @@ public class Vector {
     public void cleanArray () {
         Object[] clearArray = new Object[BASIC_ARRAY_SIZE];
         ArrayOfLinks = clearArray;
-        quantity_of_elements = STARTED_QUANTITY;
+        quantity_of_elements = 0;
     }
 
     /**
@@ -73,16 +72,16 @@ public class Vector {
      * @param args
      */
     public static void main(String[] args) {
-//        Vector vector = new Vector();
-//        vector.addElement("Some link");
-//        vector.cleanArray();
-//        for (int i=0; i<19;i++) {
-//            vector.addElement(i);
-//        }
-//        vector.addElement("SecondLink");
-//        vector.deleteElement(1);
-//        vector.displayAllElements();
-//        System.out.println(vector.getElement(0));
+        Vector vector = new Vector();
+        vector.addElement("Some link");
+        vector.cleanArray();
+        for (int i=0; i<19;i++) {
+            vector.addElement(i);
+        }
+        vector.addElement("SecondLink");
+        vector.deleteElement(1);
+        vector.displayAllElements();
+        System.out.println(vector.getElement(0));
     }
 }
 

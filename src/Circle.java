@@ -9,9 +9,9 @@ public class Circle {
 
     /**
      * Assigning Values to Variables
-     * @param x
-     * @param y
-     * @param radius
+     * @param x is a value that determine the centre of circle by one axis
+     * @param y is a value that determine the centre of circle by another axis
+     * @param radius is a value that determines the radius of the circle
      */
      public Circle(int x, int y, double radius){
         this.x = x;
@@ -21,30 +21,30 @@ public class Circle {
 
     /**
      * Move centre of circle on some values
-     * @param move_x_on
-     * @param move_y_on
+     * @param x1 add this value to main (@Code x)
+     * @param y1 add this value to main (@Code y)
      */
-     void moveCenterOfCircle(int move_x_on, int move_y_on){
-         this.x += move_x_on;
-         this.y += move_y_on;
+     void moveCenterOfCircle(int x1, int y1){
+         this.x += x1;
+         this.y += y1;
     }
 
     /**
      * Checking does previous centre remain in the area of circle or not
-     * @param previous_x
-     * @param previous_y
+     * @param x1 some variable that determine the place of some point by one axis
+     * @param y1 some variable that determine the place of some point by another axis
      * @return true of false
      */
-     boolean doesPointRemainInCircle(int previous_x, int previous_y){
-         double gipotenuza = Math.sqrt((x - previous_x)^2 + (y - previous_y)^2);
-        return this.radius >= gipotenuza;
+     boolean doesPointRemainInCircle(int x1, int y1){
+         double hypotenuse = Math.sqrt((x - x1)^2 + (y - y1)^2);
+        return this.radius >= hypotenuse;
      }
 
     /**
      * Checking does our primary circle contains some other circle
-     * @param x1
-     * @param y1
-     * @param radius1
+     * @param x1 some variable that determine the place of the centre of some circle by one axis
+     * @param y1 some variable that determine the place of the centre of some circle by another axis
+     * @param radius1 is a value that determines the radius of some circle
      * @return true of false
      */
      boolean checkConsistancyOfCircle(int x1, int y1, double radius1){
@@ -66,6 +66,7 @@ public class Circle {
      * @param args
      */
     public static void main(String[] args){
-
+        Circle circle = new Circle(12,12, 10);
+        circle.displayParametersOfCircle();
      }
 }
