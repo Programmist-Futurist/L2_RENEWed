@@ -58,8 +58,9 @@ public class Circle {
      void displayParametersOfCircle(){
          System.out.println("Center of the circle is in this point: (" + this.x + ", " + this.y + ")");
          System.out.println("Radius of this circle equals: " + this.radius);
-         System.out.println("Length of this circle equals: " + 6.28*this.radius);
+         System.out.println("Length of this circle equals: " + 2*Math.PI*this.radius);
      }
+    
 
     /**
      * This method runs all methods from the class Circle
