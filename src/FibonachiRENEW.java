@@ -15,6 +15,14 @@ public class FibonachiRENEW {
          * @return Array full of Fibonachi numbers
          */
         int[] fibbonachiFunc(int[] SomeArray){
+            if (SomeArray.length!=20){
+                try {
+                    throw new IncorrectValueException("Length of array must be equal to zero!");
+                } catch (IncorrectValueException e) {
+                    e.printStackTrace();
+                }
+            }
+
             for(int i=2; i<20; i++){
                 SomeArray[i]=SomeArray[i-1]+SomeArray[i-2];
             }

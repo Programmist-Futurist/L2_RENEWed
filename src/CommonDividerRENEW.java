@@ -16,6 +16,14 @@ public abstract class CommonDividerRENEW {
          * @return common divider (int)
          */
         int findCommonDividerFunction(int firstNum, int secondNum) {
+            if (firstNum<=0 || secondNum<=0){
+                try {
+                    throw new IncorrectValueException("Value can not be less or equal zero!");
+                } catch (IncorrectValueException e) {
+                    e.printStackTrace();
+                }
+            }
+
             int temp = 0;
             if (firstNum > secondNum) {
                 while (secondNum != 0) {

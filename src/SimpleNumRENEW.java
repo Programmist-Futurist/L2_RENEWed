@@ -13,10 +13,18 @@ public class SimpleNumRENEW {
         /**
          * Method determines Simple number or not
          * @param someNumber
-         * @param determinant
          * @return determinant that will show us simple number or not
          */
-        int simpleNumOrNotFunction(int someNumber, int determinant) {
+        int simpleNumOrNotFunction(int someNumber) {
+            if (someNumber<0){
+                try {
+                    throw new IncorrectValueException("Must be natural number!");
+                } catch (IncorrectValueException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            int determinant = 0;
             for (int i = 2; i < someNumber; i++) {
                 if (someNumber % i == 0) {
                     determinant += 1;
@@ -31,6 +39,14 @@ public class SimpleNumRENEW {
      */
     static class DisplaySimpleOrNotSimple{
         void displaySimpleOrNotSimpleFunction (int d) {
+            if (d<0){
+                try {
+                    throw new IncorrectValueException("Must be natural number!");
+                } catch (IncorrectValueException e) {
+                    e.printStackTrace();
+                }
+            }
+
             if (d == 0) {
                 System.out.println("Simple!");
             } else {
@@ -46,9 +62,8 @@ public class SimpleNumRENEW {
     public static void main(String[] args) {
         Scanner scaner = new Scanner(System.in);
         int someNumber = scaner.nextInt();
-            int determinant = 0;
         SimpleNumOrNot simpleNumOrNot = new SimpleNumOrNot();
-        determinant = simpleNumOrNot.simpleNumOrNotFunction(someNumber, determinant);
+        int determinant = simpleNumOrNot.simpleNumOrNotFunction(someNumber);
         DisplaySimpleOrNotSimple displaySimpleOrNotSimple = new DisplaySimpleOrNotSimple();
         displaySimpleOrNotSimple.displaySimpleOrNotSimpleFunction(determinant);
         }

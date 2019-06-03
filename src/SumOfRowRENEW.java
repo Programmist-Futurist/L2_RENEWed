@@ -17,6 +17,14 @@ public class SumOfRowRENEW {
          * @return sum of factorials
          */
         int sumOfFactorialsFunction(int someNumber){
+            if (someNumber<0){
+                try {
+                    throw new IncorrectValueException("Number must be equal or higher than zero!");
+                } catch (IncorrectValueException e) {
+                    e.printStackTrace();
+                }
+            }
+
             int temp = 1;
             int temp_sum = 0;
             for(int i = 1; i <= someNumber; i++){

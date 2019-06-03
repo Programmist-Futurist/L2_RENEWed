@@ -16,6 +16,14 @@ public class EqualityOfHalfsRENEW {
          * @return total quantity of these numbers
          */
         int countHappyTicketsFunction(int First, int Last, int total){
+            if (total>0){
+                try {
+                    throw new IncorrectValueException("Variable total should be equal to zero!");
+                } catch (IncorrectValueException e) {
+                    e.printStackTrace();
+                }
+            }
+
             for(int i=First; i<=Last; i++) {
                 int i1 = i / 100000 % 10;
                 int i2 = i / 10000 % 10;

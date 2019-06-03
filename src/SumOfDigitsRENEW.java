@@ -15,6 +15,14 @@ public class SumOfDigitsRENEW {
          * @return sum of digits
          */
         int digitsSumFunc(int someNumber){
+            if (someNumber<0){
+                try {
+                    throw new IncorrectValueException("Number must be equal or higher than zero!");
+                } catch (IncorrectValueException e) {
+                    e.printStackTrace();
+                }
+            }
+
             int temp_sum = 0;
             while (someNumber > 0){
                 temp_sum += someNumber % 10;

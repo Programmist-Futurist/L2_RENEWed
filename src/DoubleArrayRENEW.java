@@ -16,6 +16,14 @@ public class DoubleArrayRENEW {
          * @return array full of chars 'Ч' and 'Б' staggered
          */
         char[][] fillDoubleArrayWithCharsFunction(char[][] array) {
+            if (array.length==0){
+                try {
+                    throw new IncorrectValueException("Length of array must be more than zero!");
+                } catch (IncorrectValueException e) {
+                    e.printStackTrace();
+                }
+            }
+
             for (int i = 0; i < array.length; i++) {
                 for (int j = 0; j < array.length; j++) {
                     if (((i + j) % 2) == 0) {
