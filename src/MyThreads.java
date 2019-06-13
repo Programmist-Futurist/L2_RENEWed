@@ -1,11 +1,12 @@
-import sun.awt.geom.AreaOp;
-import sun.java2d.opengl.WGLSurfaceData;
-
+import javax.sound.midi.Soundbank;
+import java.sql.SQLOutput;
+import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class MyThreads {
-    ArrayList<Integer> list = new ArrayList<>();
+   public ArrayList<Integer> list = new ArrayList<>();
 
         Scanner scanner = new Scanner(System.in);
         public int firstNumber = scanner.nextInt();
@@ -14,10 +15,17 @@ public class MyThreads {
 
         public void threadsCreation(){
             for (int i = 0; i < threadsNumber; i++ ){
-                Thread thread = new Thread(new ThreadIterator(i));
+                System.out.print("HELLO");
+                Thread thread = new Thread(new ThreadIterator(i, list));
+                thread.setDaemon(true);
                 thread.start();
+                try {
+                    thread.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-            System.out.println(list);
+            System.out.println(Arrays.toString(list.toArray()));
         }
 
 }
@@ -25,25 +33,32 @@ public class MyThreads {
 
     class ThreadIterator implements Runnable {
         int i;
-        ThreadIterator(int i){
-        this.i = i;
-        }
+        List<Integer> list1;
 
-        @Override
-        public void run() {
-            MyThreads myThreads = new MyThreads();
+         public ThreadIterator(int i, List<Integer> list) {
+             this.i = i;
+             this.list1 = list;
+         }
 
-            for (int q = i; q < myThreads.lastNumber; q += myThreads.threadsNumber) {
-                int determinant = 0;
-                for (int k = 2; k < q / 2; k++) {
-                    if (q / 2 % k == 0) {
-                        determinant++;
-                    }
-                }
-                if (determinant==0){
-                    myThreads.list.add(q);
-                }
-            }
-        }
+             @Override
+             public void run () {
+                 MyThreads myThreads = new MyThreads();
+                 System.out.print("1");
+                 for (int q = myThreads.firstNumber + i; q < myThreads.lastNumber; q += myThreads.threadsNumber) {
+                     int determinant = 0;
+                     System.out.print("2");
+                     for (int k = 2; k <= q / 2; k++) {
+                         System.out.print("3");
+                         if (q / 2 % k == 0) {
+                             determinant++;
+                         }
+                     }
+                     if (determinant == 0) {
+                         list1.add(q);
+                         System.out.print(q);
+                     }
+                 }
+
+         }
     }
 
