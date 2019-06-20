@@ -41,7 +41,7 @@ public class ArrayClass {
         TempArray[3] = size;
         TempArray[4] = amount;
         TempArray[5] = description;
-        list.add(TempArray);
+        this.list.add(TempArray);
     }
 
 }

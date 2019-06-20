@@ -29,15 +29,20 @@ public class FindElement {
         while(i<=arrayClass.list.size()){
             System.out.println("I am here 1");
             Object[] arrayTemp = arrayClass.list.get(i);
+            int determinant = 0;
             for (int j = 0; j<arrayClass.BASIC_ARRAY_SIZE; j++) {
                 System.out.println("I am here 2");
                 for(int q = 0; q < parameterArray.length; q++) {
                     System.out.println("I am here 3");
                     String tempVar = String.valueOf(arrayTemp[j]);
                     if (tempVar.equals(parameterArray[q])) {
-                        System.out.println(arrayTemp);
+//                        System.out.println(arrayTemp);
+                        determinant+=1;
                     }
                 }
+            }
+            if(determinant==parameterArray.length) {
+                System.out.println(arrayTemp);
             }
             i++;
         }
