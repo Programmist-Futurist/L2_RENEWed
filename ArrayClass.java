@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class ArrayClass {
 
-    final int BASIC_ARRAY_SIZE = 6;
-    ArrayList<Object[]> list = new ArrayList<>();
+    final static int BASIC_ARRAY_SIZE = 6;
+    static  ArrayList<Object[]> list = new ArrayList<>();
 
     Scanner scanner = new Scanner(System.in);
     String goodName;
@@ -33,7 +33,9 @@ public class ArrayClass {
     }
 
 
-    public void addGood(String goodName, Integer price, String color, String size, Integer amount, String description) {
+    public void addGood() {
+        getParameters();
+
         Object[] TempArray = new Object[BASIC_ARRAY_SIZE];
         TempArray[0] = goodName;
         TempArray[1] = price;

@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 
 public class FindElement {
-    ArrayClass arrayClass = new ArrayClass();
+//    ArrayClass arrayClass = new ArrayClass();
 //    Iterator iterator = arrayClass.list.iterator();
 
 //    public String[] getParameters() {
@@ -21,16 +21,16 @@ public class FindElement {
 
     public void findElementFunc() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Write down parameters of good you want:");
+        System.out.println("Write down parameters of good you want through the gap:");
         String parameter = scanner.nextLine();
         String[] parameterArray = parameter.split(" ");
 
         int i = 0;
-        while(i<=arrayClass.list.size()){
+        while(i<ArrayClass.list.size()){
             System.out.println("I am here 1");
-            Object[] arrayTemp = arrayClass.list.get(i);
+            Object[] arrayTemp = ArrayClass.list.get(i);
             int determinant = 0;
-            for (int j = 0; j<arrayClass.BASIC_ARRAY_SIZE; j++) {
+            for (int j = 0; j<ArrayClass.BASIC_ARRAY_SIZE; j++) {
                 System.out.println("I am here 2");
                 for(int q = 0; q < parameterArray.length; q++) {
                     System.out.println("I am here 3");
@@ -42,24 +42,27 @@ public class FindElement {
                 }
             }
             if(determinant==parameterArray.length) {
-                System.out.println(arrayTemp);
+                System.out.println(Arrays.toString(arrayTemp));
             }
             i++;
         }
     }
 
-    public static void main(String[] args) {
-        ArrayClass arrayClass = new ArrayClass();
-        FindElement findElement = new FindElement();
-        String[] trialArray = new String[arrayClass.BASIC_ARRAY_SIZE];
-        arrayClass.getParameters();
-        arrayClass.addGood(arrayClass.goodName, arrayClass.price, arrayClass.color, arrayClass.size, arrayClass.amount, arrayClass.description);
-//        arrayClass.getParameters();
-//        arrayClass.AddGood(arrayClass.goodName, arrayClass.price, arrayClass.color, arrayClass.size, arrayClass.amount, arrayClass.description);
+//    public static void main(String[] args) {
+//        ArrayClass arrayClass = new ArrayClass();
+//
+//        FindElement findElement = new FindElement();
+//
+////        String[] trialArray = new String[arrayClass.BASIC_ARRAY_SIZE];
+////        arrayClass.getParameters();
+//
+//        arrayClass.addGood(arrayClass.goodName, arrayClass.price, arrayClass.color, arrayClass.size, arrayClass.amount, arrayClass.description);
+////        arrayClass.getParameters();
+////        arrayClass.AddGood(arrayClass.goodName, arrayClass.price, arrayClass.color, arrayClass.size, arrayClass.amount, arrayClass.description);
+////        findElement.findElementFunc();
+//        System.out.println(Arrays.deepToString(arrayClass.list.get(0)));
+//        System.out.println(arrayClass.list.size());
 //        findElement.findElementFunc();
-        System.out.println(Arrays.deepToString(arrayClass.list.get(0)));
-        System.out.println(arrayClass.list.size());
-        findElement.findElementFunc();
-
-    }
+//
+//    }
 }
