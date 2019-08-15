@@ -6,30 +6,30 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.lang.Object;
+
 
 public class MyThreads {
 //    private ThreadIterator;
-ArrayList<Integer> listMain = new ArrayList<>();
+static ArrayList<Integer> listMain = new ArrayList<>();
 
-    public static void main(String[] args) {
-//         ArrayList<Integer> listMain = new ArrayList<>();
+    public static void main(String[] args) throws InterruptedException {
 
-//        Scanner scanner = new Scanner(System.in);
-//        public int firstNumber = scanner.nextInt();
-//        public int lastNumber = scanner.nextInt();
-//        public int threadsNumber = scanner.nextInt();
+
+
+
+
         Input input = new Input();
         SysOut sysOut = new SysOut();
-//        public void threadsCreation () {
+
             for (int i = 0; i < input.threadsNumber; i++) {
-                System.out.println("HELLO");
                 Thread thread = new Thread(new ThreadIterator(i, input.firstNumber, input.lastNumber, input.threadsNumber));
-//                thread.setDaemon(true);
                 thread.start();
             }
-//            System.out.println(list);
-//        listMain.add();
-//        sysOut.sysOut(listMain);
+
+            Thread.sleep(100);
+            System.out.println(listMain);
+
         }
     }
 //}
@@ -49,8 +49,8 @@ class Input {
 }
 
 
-    class ThreadIterator implements Runnable {
-    MyThreads myThreads = new MyThreads();
+    class  ThreadIterator implements Runnable {
+//    MyThreads myThreads = new MyThreads();
         int i;
         List<Integer> list1;
         int first;
@@ -64,22 +64,16 @@ class Input {
              this.last = lastNumber;
              this.threadsNum = threadsNumber;
          }
-//         public ThreadIterator(){
-//
-//         }
 
 
              @Override
              public void run () {
                  list1 = new ArrayList<>();
-//                 System.out.print("1");
-//                 System.out.print("1");
+
                  for (int q = (first + i); q <= last; q += threadsNum) {
                      int determinant = 0;
-//                     System.out.print("2");
 
                      for (int k = 2; k < q; k++) {
-//                         System.out.print("3");
 
                          double temp = q % k;
                          if (temp == 0) {
@@ -89,13 +83,16 @@ class Input {
 
                      if (determinant == 0) {
 
+//                         MyThreads.listMain.add(q);
                          list1.add(q);
-//                         System.out.print("Hello");
+
                      }
                  }
                  System.out.println(list1);
-//                 myThreads.listMain.add(list1);
+
+                 MyThreads.listMain.addAll(list1);
              }
+
     }
 
 
